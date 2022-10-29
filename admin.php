@@ -9,12 +9,13 @@
     <th>إسم المريض</th>
     <th>البريد الإلكتروني</th>
     <th>التاريخ</th>
+    <th>الوقت</th>
 
 <?php
 
     $host               = "localhost";
     $user               = "root";
-    $password      = "rootroot";
+    $password      = "";
     $dbName       = "hospital";
 
     $conn = mysqli_connect($host, $user, $password,$dbName);
@@ -26,7 +27,7 @@
 
     if ($result){
         while($row = mysqli_fetch_assoc($result)){
-            echo "<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['email'] . "</td><td>" . $row['date'] . "</td></tr>";
+            echo "<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['number'] . "</td><td>" . $row['date'] . "</td><td>" . $row['time'] . "</td></tr>";
         }
         echo "</table>";
     }
